@@ -67,11 +67,11 @@ function changee(v){
       let frame = document.getElementById('a');
 
       places.forEach(place => {
-        let place =  JSON.parse(JSON.stringify(place))
+        let lugar =  JSON.parse(JSON.stringify(place))
 
-        if (place.lat == latitude && place.long == longitude){
+        if (lugar.lat == latitude && lugar.long == longitude){
           
-          frame.setAttribute('gps-entity-place',`latitude: ${place.lat}; longitude: ${place.long};` );
+          frame.setAttribute('gps-entity-place',`latitude: ${lugar.lat}; longitude: ${lugar.long};` );
         }
       });
       // frame.setAttribute('gps-entity-place',`latitude: ${lat}; longitude: ${long};` );
