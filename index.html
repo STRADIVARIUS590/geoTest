@@ -51,39 +51,38 @@ function changee(v){
 //      gps-entity-place="latitude:32.5156864; longitude: -116.9850368;"
     
     // foursquare api key fsq3kpFy8+6h3c3BWjsvPCJJFBs6aWjUW39dmjGFJ7FNIAE=
-      navigator.geolocation.getCurrentPosition((position) => {
-      console.log(position.coords.latitude); 
-      console.log(position.coords.longitude)
 
-      let latitude = position.coords.latitude;
-      let longitude = position.coords.longitude
+      setInterval(() => {
+
+        navigator.geolocation.getCurrentPosition((position) => {
+        console.log(position.coords.latitude); 
+        console.log(position.coords.longitude)
+
+        let latitude = position.coords.latitude;
+        let longitude = position.coords.longitude
 
 
 
-      let frame = document.getElementById('a');
+        let frame = document.getElementById('a');
 
-      places.forEach(place => {
-        let lugar =  JSON.parse(JSON.stringify(place))
+        places.forEach(place => {
+          let lugar =  JSON.parse(JSON.stringify(place))
 
-        if (lugar.lat == latitude && lugar.long == longitude){
-          console.log('alavergaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
-          frame.setAttribute('gps-entity-place',`latitude: ${lugar.lat}; longitude: ${lugar.long};` );
-          value="This content will always face you."
-          
-          frame.setAttribute('value', lugar.schedule);
-        }
-      });
-      // frame.setAttribute('gps-entity-place',`latitude: ${lat}; longitude: ${long};` );
-      console.log(document.getElementById('a'));
+          if (lugar.lat == latitude && lugar.long == longitude){
+            console.log('alavergaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
+            frame.setAttribute('gps-entity-place',`latitude: ${lugar.lat}; longitude: ${lugar.long};` );
+            frame.setAttribute('value', lugar.schedule);
+          }
+        });
+        // frame.setAttribute('gps-entity-place',`latitude: ${lat}; longitude: ${long};` );
+        console.log(document.getElementById('a'));
       
       
       // console.log('longitud '. position.coords.longitude); 
-    }, (error) => {
-      console.log(error);
-    })
+      }, (error) => {
+        console.log(error);
+      });
 
-
-
-
+    }, 1000);
   </script>
 </html>
