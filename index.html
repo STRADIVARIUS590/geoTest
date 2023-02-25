@@ -32,6 +32,27 @@ function changee(v){
  }
 
 
+ let places =  [
+  'place_1' = {
+  'lat' : '32.5156864',
+  'long' : '116.9850368',
+    'schedule' : {
+      'lorem :V' : 'aaaaaaaaa'
+    }
+  },
+
+
+  'place_2' = {
+  'lat' : 'as',
+  'long' : 'asd',
+    'schedule' : {
+      'lorem :V' : 'aaaaaaaaa'
+    }
+  }
+  
+ ];
+
+
 //      gps-entity-place="latitude:32.5156864; longitude: -116.9850368;"
     
     // foursquare api key fsq3kpFy8+6h3c3BWjsvPCJJFBs6aWjUW39dmjGFJ7FNIAE=
@@ -39,13 +60,20 @@ function changee(v){
       console.log(position.coords.latitude); 
       console.log(position.coords.longitude)
 
-      let lat = position.coords.latitude;
-      let long = position.coords.longitude
+      let latitude = position.coords.latitude;
+      let longitude = position.coords.longitude
+
+
 
       let frame = document.getElementById('a');
-      frame.setAttribute('gps-entity-place',`latitude: ${lat}; longitude: ${long};` );
 
-
+      places.forEach(place => {
+        if (place.lat == latitude && place.long == longitude){
+          console.log(place);
+          frame.setAttribute('gps-entity-place',`latitude: ${place.lat}; longitude: ${place.long};` );
+        }
+      });
+      // frame.setAttribute('gps-entity-place',`latitude: ${lat}; longitude: ${long};` );
       console.log(document.getElementById('a'));
       
       
@@ -53,22 +81,9 @@ function changee(v){
     }, (error) => {
       console.log(error);
     })
+
+
+
+
   </script>
-</html> 
-
-
-<!-- <!DOCTYPE html>
-<html>
-<head>
-<title>AR.js A-Frame Location-based</title>
-<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar-threex-location-only.js'></script>
-<script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js'></script>
-</head>
-<body>
-<a-scene vr-mode-ui='enabled: true' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
-    <a-camera gps-new-camera='gpsMinDistance: 5'></a-camera>
-    <a-entity material='color: red' geometry='primitive: box' gps-new-entity-place="latitude:32.5156864; longitude: -116.9850368;"  scale="120 120 120"></a-entity>
-</a-scene>
-</body>
-</html>       -->
+</html>
