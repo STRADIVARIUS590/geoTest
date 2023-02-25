@@ -15,7 +15,7 @@
       arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
     >
       <a-text id="a"
-        value="This content will always face you."
+       
         look-at="[gps-camera]"
         scale="200 200 0"
         position="-1300 0 -900"
@@ -37,7 +37,7 @@ function changee(v){
       'lat' : '32.5156864',
       'long' : '-116.9850368',
       'schedule' : {
-        'lorem :V' : 'aaaaaaaaa'
+        'lorem :V' : 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
       }
     
   },
@@ -72,6 +72,9 @@ function changee(v){
         if (lugar.lat == latitude && lugar.long == longitude){
           console.log('alavergaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
           frame.setAttribute('gps-entity-place',`latitude: ${lugar.lat}; longitude: ${lugar.long};` );
+          value="This content will always face you."
+          
+          frame.setAttribute('value', lugar.schedule);
         }
       });
       // frame.setAttribute('gps-entity-place',`latitude: ${lat}; longitude: ${long};` );
