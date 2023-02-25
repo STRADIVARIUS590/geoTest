@@ -33,24 +33,23 @@ function changee(v){
 
 
  let places =  [
-  'place_1' = {
-  'lat' : '32.5156864',
-  'long' : '116.9850368',
-    'schedule' : {
-      'lorem :V' : 'aaaaaaaaa'
-    }
+  {
+      'lat' : '32.5156864',
+      'long' : '116.9850368',
+      'schedule' : {
+        'lorem :V' : 'aaaaaaaaa'
+      }
+    
   },
 
-
-  'place_2' = {
-  'lat' : 'as',
-  'long' : 'asd',
+ {
+    'lat' : 'as',
+    'long' : 'asd',
     'schedule' : {
       'lorem :V' : 'aaaaaaaaa'
     }
-  }
-  
- ];
+ }
+];
 
 
 //      gps-entity-place="latitude:32.5156864; longitude: -116.9850368;"
@@ -68,8 +67,10 @@ function changee(v){
       let frame = document.getElementById('a');
 
       places.forEach(place => {
+        let place =  JSON.parse(JSON.stringify(place))
+
         if (place.lat == latitude && place.long == longitude){
-          console.log(place);
+          
           frame.setAttribute('gps-entity-place',`latitude: ${place.lat}; longitude: ${place.long};` );
         }
       });
