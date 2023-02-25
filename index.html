@@ -81,7 +81,7 @@ function changee(v){
       // console.log('longitud '. position.coords.longitude); 
       }, (error) => {
         console.log(error);
-      });
+      }, {enableHighAccuracy: true});
 
     }, 1000);
   </script>
