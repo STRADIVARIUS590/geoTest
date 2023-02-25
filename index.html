@@ -19,29 +19,22 @@
         look-at="[gps-camera]"
         scale="200 200 0"
         position="-1300 0 -900"
-        gps-entity-place="latitude:32.5156864; longitude: -116.9850368;"
+   
       ></a-text>
       <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
   </body>
 
-  <h1>sadasdd</h1>
-  
-  <input type="text" onchange="changee(this)">
-
-
   <script>
-
 function changee(v){
   console.log(v);
 
  }
 
 
-
+//      gps-entity-place="latitude:32.5156864; longitude: -116.9850368;"
     
     // foursquare api key fsq3kpFy8+6h3c3BWjsvPCJJFBs6aWjUW39dmjGFJ7FNIAE=
-  console.log('aaaaaaaaaaaaaaaaaaaaaaaaaa');
       navigator.geolocation.getCurrentPosition((position) => {
       console.log(position.coords.latitude); 
       console.log(position.coords.longitude)
